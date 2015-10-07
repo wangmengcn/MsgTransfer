@@ -67,3 +67,8 @@ D:\CODE\MsgTransfer\MsgTransfer\bin\Debug\es\devexpress.xpf.layoutcontrol.v13.1.
 D:\CODE\MsgTransfer\MsgTransfer\bin\Debug\ja\devexpress.xpf.layoutcontrol.v13.1.resources.dll
 D:\CODE\MsgTransfer\MsgTransfer\bin\Debug\ru\devexpress.xpf.layoutcontrol.v13.1.resources.dll
 D:\CODE\MsgTransfer\MsgTransfer\obj\Debug\MsgTransfer.exe.licenses
+D:\CODE\MsgTransfer\MsgTransfer\bin\Debug\devexpress.xpf.controls.v13.1.dll
+D:\CODE\MsgTransfer\MsgTransfer\bin\Debug\devexpress.xpf.controls.v13.1.xml
+D:\CODE\MsgTransfer\MsgTransfer\obj\Debug\MsgTransfer.csprojResolveAssemblyReference.cache
+D:\CODE\MsgTransfer\MsgTransfer\obj\Debug\NewTask.g.cs
+D:\CODE\MsgTransfer\MsgTransfer\obj\Debug\NewTask.baml

@@ -1,0 +1,1697 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DevExpress.Xpf.Controls.v13.1</name>
+    </assembly>
+    <members>
+        <member name="T:DevExpress.Xpf.WindowsUI.NavigationPage">
+
+            <summary>
+                <para>A navigation container that implements the <see cref="T:DevExpress.Xpf.WindowsUI.Navigation.INavigationAware"/> interface.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.Xpf.WindowsUI.NavigationPage.#ctor">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+
+        </member>
+        <member name="M:DevExpress.Xpf.WindowsUI.NavigationPage.GetNavigationCacheMode(System.Windows.DependencyObject)">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <param name="obj">
+		 [To be supplied] 
+            </param>
+            <returns> [To be supplied] </returns>
+
+
+        </member>
+        <member name="P:DevExpress.Xpf.WindowsUI.NavigationPage.NavigationCacheMode(System.Windows.DependencyObject)">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <value> [To be supplied] </value>
+
+
+        </member>
+        <member name="F:DevExpress.Xpf.WindowsUI.NavigationPage.NavigationCacheModeProperty">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <returns> [To be supplied] </returns>
+
+
+        </member>
+        <member name="M:DevExpress.Xpf.WindowsUI.NavigationPage.SetNavigationCacheMode(System.Windows.DependencyObject,DevExpress.Xpf.WindowsUI.NavigationCacheMode)">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <param name="obj">
+		 [To be supplied] 
+            </param>
+            <param name="value">
+		 [To be supplied] 
+            </param>
+
+
+        </member>
+        <member name="T:DevExpress.Xpf.Controls.PageType">
+
+            <summary>
+                <para>Lists values that specify on which side of the book the first page is displayed.
+</para>
+            </summary>
+
+        </member>
+        <member name="F:DevExpress.Xpf.Controls.PageType.Even">
+            <summary>
+                <para>The first page is displayed on the right side of the book.
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.Xpf.Controls.PageType.Odd">
+            <summary>
+                <para>The first page is displayed on the left side of the book.
+</para>
+            </summary>
+
+
+        </member>
+        <member name="T:DevExpress.Xpf.Controls.PageIndexChangingEventHandler">
+
+            <summary>
+                <para>Represents a method that will handle the <see cref="E:DevExpress.Xpf.Controls.Book.PageIndexChanging"/> event.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.Xpf.Controls.PageIndexChangingEventHandler.Invoke(System.Object,DevExpress.Xpf.Controls.PageIndexChangingEventArgs)">
+            <summary>
+                <para>Represents a method that will handle the <see cref="E:DevExpress.Xpf.Controls.Book.PageIndexChanging"/> event.
+</para>
+            </summary>
+            <param name="sender">
+		An object representing the event source.
+
+            </param>
+            <param name="e">
+		A <see cref="T:DevExpress.Xpf.Controls.PageIndexChangingEventArgs"/> object that contains event data.
+
+            </param>
+
+
+        </member>
+        <member name="T:DevExpress.Xpf.Controls.PageIndexChangingEventArgs">
+
+            <summary>
+                <para>Provides data for the <see cref="E:DevExpress.Xpf.Controls.Book.PageIndexChanging"/> event.
+
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.Xpf.Controls.PageIndexChangingEventArgs.#ctor(System.Int32,System.Int32)">
+            <summary>
+                <para>Initializes a new instance of the PageIndexChangingEventArgs class.
+</para>
+            </summary>
+            <param name="oldValue">
+		An integer value that specifies the index of the previous page. This value is assigned to the <see cref="P:DevExpress.Xpf.Controls.PageIndexChangingEventArgs.OldPageIndex"/> property.
+
+            </param>
+            <param name="newValue">
+		An integer value that specifies the index of the current page. This value is assigned to the <see cref="P:DevExpress.Xpf.Controls.PageIndexChangingEventArgs.NewPageIndex"/> property.
+
+            </param>
+
+
+        </member>
+        <member name="P:DevExpress.Xpf.Controls.PageIndexChangingEventArgs.NewPageIndex">
+            <summary>
+                <para>Gets or sets the index of the current page.
+</para>
+            </summary>
+            <value>An integer value that specifies the index of the current page.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.Xpf.Controls.PageIndexChangingEventArgs.OldPageIndex">
+            <summary>
+                <para>Gets the index of the previous page.
+</para>
+            </summary>
+            <value>An integer value that specifies the index of the previous page.
+</value>
+
+
+        </member>
+        <member name="T:DevExpress.Xpf.Controls.Book">
+
+            <summary>
+                <para>Represents a book control. 
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.Xpf.Controls.Book.#ctor">
+            <summary>
+                <para>Initializes a new instance of the Book class. 
+</para>
+            </summary>
+
+
+        </member>
+        <member name="P:DevExpress.Xpf.Controls.Book.ActiveAreaSize">
+            <summary>
+                <para>Gets or sets the size of the active area within a page. This is a dependency property. 
+</para>
+            </summary>
+            <value>A <see cref="T:System.Windows.Size"/> structure that represents the size of the active area within a page. 
+</value>
+
+
+        </member>
+        <member name="F:DevExpress.Xpf.Controls.Book.ActiveAreaSizeProperty">
+            <summary>
+                <para>Identifies the  dependency property.
+</para>
+            </summary>
+            <returns> [To be supplied] </returns>
+
+
+        </member>
+        <member name="M:DevExpress.Xpf.Controls.Book.AddService(System.Type,System.Object,System.Boolean)">
+            <summary>
+                <para>Adds the specified service to the service container.
+</para>
+            </summary>
+            <param name="serviceType">
+		The type of service to add.
+
+            </param>
+            <param name="serviceInstance">
+		An instance of the service type to add. This object must implement or inherit from the type indicated by the <i>serviceType</i> parameter.
+
+            </param>
+            <param name="promote">
+		<b>true</b> to promote this request to any parent service containers; otherwise, <b>false</b>.
+
+            </param>
+
+
+        </member>
+        <member name="M:DevExpress.Xpf.Controls.Book.AddService(System.Type,System.ComponentModel.Design.ServiceCreatorCallback,System.Boolean)">
+            <summary>
+                <para>Adds the specified service to the service container. 
+</para>
+            </summary>
+            <param name="serviceType">
+		The type of service to add. 
+
+            </param>
+            <param name="callback">
+		A callback object that is used to create the service. This allows a service to be declared as available, but delays the creation of the object until the service is requested.
+
+            </param>
+            <param name="promote">
+		<b>true</b> to promote this request to any parent service containers; otherwise, <b>false</b>.
+
+            </param>
+
+
+        </member>
+        <member name="M:DevExpress.Xpf.Controls.Book.AddService(System.Type,System.ComponentModel.Design.ServiceCreatorCallback)">
+            <summary>
+                <para>Adds the specified service to the service container. 
+</para>
+            </summary>
+            <param name="serviceType">
+		The type of service to add.
+
+            </param>
+            <param name="callback">
+		A callback object that is used to create the service. This allows a service to be declared as available, but delays the creation of the object until the service is requested.
+
+            </param>
+
+
+        </member>
+        <member name="M:DevExpress.Xpf.Controls.Book.AddService(System.Type,System.Object)">
+            <summary>
+                <para>Adds the specified service to the service container. 
+</para>
+            </summary>
+            <param name="serviceType">
+		The type of service to add. 
+
+            </param>
+            <param name="serviceInstance">
+		An instance of the service type to add. This object must implement or inherit from the type indicated by the <i>serviceType</i> parameter.
+
+            </param>
+
+
+        </member>
+        <member name="P:DevExpress.Xpf.Controls.Book.AnimationRate">
+            <summary>
+                <para>Gets or sets the animation rate. This is a dependency property.
+</para>
+            </summary>
+            <value>A <see cref="T:System.Double"/> value that specifies the animation rate. 
+</value>
+
+
+        </member>
+        <member name="F:DevExpress.Xpf.Controls.Book.AnimationRateProperty">
+            <summary>
+                <para>Identifies the  dependency property.
+</para>
+            </summary>
+            <returns> [To be supplied] </returns>
+
+
+        </member>
+        <member name="P:DevExpress.Xpf.Controls.Book.AnimationSpeed">
+            <summary>
+                <para>Gets or sets the speed the page animation is played. This is a dependency property. 
+</para>
+            </summary>
+            <value>A <see cref="T:System.Double"/> value that specifies the speed the short animation is played, in pixels per second. 
+</value>
+
+
+        </member>
+        <member name="F:DevExpress.Xpf.Controls.Book.AnimationSpeedProperty">
+            <summary>
+                <para>Identifies the  dependency property.
+</para>
+            </summary>
+            <returns> [To be supplied] </returns>
+
+
+        </member>
+        <member name="P:DevExpress.Xpf.Controls.Book.DataSource">
+            <summary>
+                <para>Gets or sets the Book control's data source. This is a dependency property.
+</para>
+            </summary>
+            <value>An object that contains data displayed within the Book control.
+</value>
+
+
+        </member>
+        <member name="F:DevExpress.Xpf.Controls.Book.DataSourceProperty">
+            <summary>
+                <para>Identifies the  dependency property.
+</para>
+            </summary>
+            <returns> [To be supplied] </returns>
+
+
+        </member>
+        <member name="P:DevExpress.Xpf.Controls.Book.FirstPage">
+            <summary>
+                <para>Gets or sets whether the first page is displayed on the left side of the book.
+</para>
+            </summary>
+            <value>One of the <see cref="T:DevExpress.Xpf.Controls.PageType"/> enumeration members that specifies whether the first page is displayed on the left side of the book.
+</value>
+
+
+        </member>
+        <member name="F:DevExpress.Xpf.Controls.Book.FirstPageProperty">
+            <summary>
+                <para>Identifies the  dependency property.
+</para>
+            </summary>
+            <returns> [To be supplied] </returns>
+
+
+        </member>
+        <member name="M:DevExpress.Xpf.Controls.Book.GetService(System.Type)">
+            <summary>
+                <para>Gets the service object of the specified type.
+</para>
+            </summary>
+            <param name="serviceType">
+		An object that specifies the type of service object to get.
+
+            </param>
+            <returns>A service object of the specified type. <b>null</b> (<b>Nothing</b> in Visual Basic) if there is no service object of this type. 
+</returns>
+
+
+        </member>
+        <member name="M:DevExpress.Xpf.Controls.Book.OnApplyTemplate">
+            <summary>
+                <para>Called after the template is completely generated, and attached to the visual tree. 
+</para>
+            </summary>
+
+
+        </member>
+        <member name="P:DevExpress.Xpf.Controls.Book.PageCount">
+            <summary>
+                <para>Gets the total number of pages within a book. 
+</para>
+            </summary>
+            <value>An integer value that specifies the total number of pages in a book. 
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.Xpf.Controls.Book.PageIndex">
+            <summary>
+                <para>Gets or sets the index of the page currently opened. This is a dependency property.
+</para>
+            </summary>
+            <value>An integer value that specifies the index of the current page. <b>-1</b> if the left page corresponds to a cover. 
+</value>
+
+
+        </member>
+        <member name="E:DevExpress.Xpf.Controls.Book.PageIndexChanged">
+            <summary>
+                <para>Occurs after a new page has been opened. 
+</para>
+            </summary>
+
+
+        </member>
+        <member name="E:DevExpress.Xpf.Controls.Book.PageIndexChanging">
+            <summary>
+                <para>Enables cancelling turning the current page. 
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.Xpf.Controls.Book.PageIndexProperty">
+            <summary>
+                <para>Identifies the  dependency property.
+</para>
+            </summary>
+            <returns> [To be supplied] </returns>
+
+
+        </member>
+        <member name="P:DevExpress.Xpf.Controls.Book.PageTemplate">
+            <summary>
+                <para>Gets or sets the template that defines the presentation of pages. This is a dependency property.
+</para>
+            </summary>
+            <value>A <see cref="T:System.Windows.DataTemplate"/> object that defines the presentation of pages. 
+</value>
+
+
+        </member>
+        <member name="F:DevExpress.Xpf.Controls.Book.PageTemplateProperty">
+            <summary>
+                <para>Identifies the  dependency property.
+</para>
+            </summary>
+            <returns> [To be supplied] </returns>
+
+
+        </member>
+        <member name="P:DevExpress.Xpf.Controls.Book.PartialTurnEndPoint">
+            <summary>
+                <para>For internal use.
+</para>
+            </summary>
+            <value>@nbsp;
+</value>
+
+
+        </member>
+        <member name="M:DevExpress.Xpf.Controls.Book.RemoveService(System.Type)">
+            <summary>
+                <para>Removes the service of the specified type from the service container. 
+</para>
+            </summary>
+            <param name="serviceType">
+		The type of service to remove.
+
+            </param>
+
+
+        </member>
+        <member name="M:DevExpress.Xpf.Controls.Book.RemoveService(System.Type,System.Boolean)">
+            <summary>
+                <para>Removes the service of the specified type from the service container.
+</para>
+            </summary>
+            <param name="serviceType">
+		The type of service to remove.
+
+            </param>
+            <param name="promote">
+		<b>true</b> to promote this request to any parent service containers; otherwise, <b>false</b>. 
+
+            </param>
+
+
+        </member>
+        <member name="P:DevExpress.Xpf.Controls.Book.ShortAnimationSpeed">
+            <summary>
+                <para>Gets or sets the speed the short animation is played. This is a dependency property.
+</para>
+            </summary>
+            <value>A <see cref="T:System.Double"/> value that specifies the speed the short animation is played, in pixels per second.
+</value>
+
+
+        </member>
+        <member name="F:DevExpress.Xpf.Controls.Book.ShortAnimationSpeedProperty">
+            <summary>
+                <para>Identifies the  dependency property.
+</para>
+            </summary>
+            <returns> [To be supplied] </returns>
+
+
+        </member>
+        <member name="T:DevExpress.Xpf.WindowsUI.Navigation.FrameNavigationService">
+
+            <summary>
+                <para>The service that provides methods to navigate between Views within a <see cref="T:DevExpress.Xpf.WindowsUI.NavigationFrame"/>.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.Xpf.WindowsUI.Navigation.FrameNavigationService.#ctor">
+            <summary>
+                <para>Initializes a new instance of the FrameNavigationService class.
+</para>
+            </summary>
+
+
+        </member>
+        <member name="P:DevExpress.Xpf.WindowsUI.Navigation.FrameNavigationService.Frame">
+            <summary>
+                <para>Gets or sets the Frame to which the current service is associated.
+</para>
+            </summary>
+            <value>A <see cref="T:DevExpress.Xpf.WindowsUI.NavigationFrame"/> object to which the current service is associated.
+</value>
+
+
+        </member>
+        <member name="F:DevExpress.Xpf.WindowsUI.Navigation.FrameNavigationService.FrameProperty">
+            <summary>
+                <para>Identifies the  dependency property.
+</para>
+            </summary>
+            <returns> [To be supplied] </returns>
+
+
+        </member>
+        <member name="T:DevExpress.Xpf.WindowsUI.SlideViewItem">
+
+            <summary>
+                <para>An object within a <see cref="T:DevExpress.Xpf.WindowsUI.SlideView"/> that stores content.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.Xpf.WindowsUI.SlideViewItem.#ctor">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+
+        </member>
+        <member name="E:DevExpress.Xpf.WindowsUI.SlideViewItem.Click">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+
+        </member>
+        <member name="P:DevExpress.Xpf.WindowsUI.SlideViewItem.Command">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <value> [To be supplied] </value>
+
+
+        </member>
+        <member name="P:DevExpress.Xpf.WindowsUI.SlideViewItem.CommandParameter">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <value> [To be supplied] </value>
+
+
+        </member>
+        <member name="F:DevExpress.Xpf.WindowsUI.SlideViewItem.CommandParameterProperty">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <returns> [To be supplied] </returns>
+
+
+        </member>
+        <member name="F:DevExpress.Xpf.WindowsUI.SlideViewItem.CommandProperty">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <returns> [To be supplied] </returns>
+
+
+        </member>
+        <member name="T:DevExpress.Xpf.WindowsUI.PageViewItem">
+
+            <summary>
+                <para>An object within a <see cref="T:DevExpress.Xpf.WindowsUI.PageView"/> that stores content.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.Xpf.WindowsUI.PageViewItem.#ctor">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+
+        </member>
+        <member name="P:DevExpress.Xpf.WindowsUI.PageViewItem.IsMouseDown">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <value> [To be supplied] </value>
+
+
+        </member>
+        <member name="P:DevExpress.Xpf.WindowsUI.PageViewItem.IsMouseOverItem">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <value> [To be supplied] </value>
+
+
+        </member>
+        <member name="T:DevExpress.Xpf.WindowsUI.PageView">
+
+            <summary>
+                <para>A PageView within a WindowsUI application.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.Xpf.WindowsUI.PageView.#ctor">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.Xpf.WindowsUI.PageView.AnimationDirectionProperty">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <returns> [To be supplied] </returns>
+
+
+        </member>
+        <member name="P:DevExpress.Xpf.WindowsUI.PageView.AnimationType">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <value> [To be supplied] </value>
+
+
+        </member>
+        <member name="F:DevExpress.Xpf.WindowsUI.PageView.AnimationTypeProperty">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <returns> [To be supplied] </returns>
+
+
+        </member>
+        <member name="P:DevExpress.Xpf.WindowsUI.PageView.BackCommand">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <value> [To be supplied] </value>
+
+
+        </member>
+        <member name="F:DevExpress.Xpf.WindowsUI.PageView.BackCommandProperty">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <returns> [To be supplied] </returns>
+
+
+        </member>
+        <member name="P:DevExpress.Xpf.WindowsUI.PageView.HasHeader">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <value> [To be supplied] </value>
+
+
+        </member>
+        <member name="F:DevExpress.Xpf.WindowsUI.PageView.HasHeaderProperty">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <returns> [To be supplied] </returns>
+
+
+        </member>
+        <member name="P:DevExpress.Xpf.WindowsUI.PageView.Header">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <value> [To be supplied] </value>
+
+
+        </member>
+        <member name="F:DevExpress.Xpf.WindowsUI.PageView.HeaderProperty">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <returns> [To be supplied] </returns>
+
+
+        </member>
+        <member name="P:DevExpress.Xpf.WindowsUI.PageView.HeaderTemplate">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <value> [To be supplied] </value>
+
+
+        </member>
+        <member name="F:DevExpress.Xpf.WindowsUI.PageView.HeaderTemplateProperty">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <returns> [To be supplied] </returns>
+
+
+        </member>
+        <member name="P:DevExpress.Xpf.WindowsUI.PageView.HeaderTemplateSelector">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <value> [To be supplied] </value>
+
+
+        </member>
+        <member name="F:DevExpress.Xpf.WindowsUI.PageView.HeaderTemplateSelectorProperty">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <returns> [To be supplied] </returns>
+
+
+        </member>
+        <member name="P:DevExpress.Xpf.WindowsUI.PageView.ShowBackButton">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <value> [To be supplied] </value>
+
+
+        </member>
+        <member name="F:DevExpress.Xpf.WindowsUI.PageView.ShowBackButtonProperty">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <returns> [To be supplied] </returns>
+
+
+        </member>
+        <member name="T:DevExpress.Xpf.WindowsUI.Navigation.NavigationBaseEventArgs">
+
+            <summary>
+                <para>Provides base properties for navigation events in WindowsUI applications.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.Xpf.WindowsUI.Navigation.NavigationBaseEventArgs.#ctor(System.Object,System.Object)">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <param name="source">
+		 [To be supplied] 
+            </param>
+            <param name="parameter">
+		 [To be supplied] 
+            </param>
+
+
+        </member>
+        <member name="P:DevExpress.Xpf.WindowsUI.Navigation.NavigationBaseEventArgs.Parameter">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <value> [To be supplied] </value>
+
+
+        </member>
+        <member name="P:DevExpress.Xpf.WindowsUI.Navigation.NavigationBaseEventArgs.Source">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <value> [To be supplied] </value>
+
+
+        </member>
+        <member name="T:DevExpress.Xpf.WindowsUI.Navigation.INavigationAware">
+
+            <summary>
+                <para>An interface that provides methods for navigating within a WindowsUI application.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.Xpf.WindowsUI.Navigation.INavigationAware.NavigatedFrom(DevExpress.Xpf.WindowsUI.Navigation.NavigationEventArgs)">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <param name="e">
+		 [To be supplied] 
+            </param>
+
+
+        </member>
+        <member name="M:DevExpress.Xpf.WindowsUI.Navigation.INavigationAware.NavigatedTo(DevExpress.Xpf.WindowsUI.Navigation.NavigationEventArgs)">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <param name="e">
+		 [To be supplied] 
+            </param>
+
+
+        </member>
+        <member name="M:DevExpress.Xpf.WindowsUI.Navigation.INavigationAware.NavigatingFrom(DevExpress.Xpf.WindowsUI.Navigation.NavigatingEventArgs)">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <param name="e">
+		 [To be supplied] 
+            </param>
+
+
+        </member>
+        <member name="T:DevExpress.Xpf.WindowsUI.Navigation.Navigation">
+
+            <summary>
+                <para>Provides members that support navigation within WindowsUI applications.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.Xpf.WindowsUI.Navigation.Navigation.#ctor">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+
+        </member>
+        <member name="M:DevExpress.Xpf.WindowsUI.Navigation.Navigation.GetNavigateTo(System.Windows.DependencyObject)">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <param name="target">
+		 [To be supplied] 
+            </param>
+            <returns> [To be supplied] </returns>
+
+
+        </member>
+        <member name="M:DevExpress.Xpf.WindowsUI.Navigation.Navigation.GetNavigationHandler(System.Windows.DependencyObject)">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <param name="target">
+		 [To be supplied] 
+            </param>
+            <returns> [To be supplied] </returns>
+
+
+        </member>
+        <member name="M:DevExpress.Xpf.WindowsUI.Navigation.Navigation.GetNavigationParameter(System.Windows.DependencyObject)">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <param name="target">
+		 [To be supplied] 
+            </param>
+            <returns> [To be supplied] </returns>
+
+
+        </member>
+        <member name="M:DevExpress.Xpf.WindowsUI.Navigation.Navigation.GetNavigationTarget(System.Windows.DependencyObject)">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <param name="target">
+		 [To be supplied] 
+            </param>
+            <returns> [To be supplied] </returns>
+
+
+        </member>
+        <member name="P:DevExpress.Xpf.WindowsUI.Navigation.Navigation.NavigateTo(System.Windows.DependencyObject)">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <value> [To be supplied] </value>
+
+
+        </member>
+        <member name="F:DevExpress.Xpf.WindowsUI.Navigation.Navigation.NavigateToProperty">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <returns> [To be supplied] </returns>
+
+
+        </member>
+        <member name="P:DevExpress.Xpf.WindowsUI.Navigation.Navigation.NavigationHandler(System.Windows.DependencyObject)">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <value> [To be supplied] </value>
+
+
+        </member>
+        <member name="F:DevExpress.Xpf.WindowsUI.Navigation.Navigation.NavigationHandlerProperty">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <returns> [To be supplied] </returns>
+
+
+        </member>
+        <member name="P:DevExpress.Xpf.WindowsUI.Navigation.Navigation.NavigationParameter(System.Windows.DependencyObject)">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <value> [To be supplied] </value>
+
+
+        </member>
+        <member name="F:DevExpress.Xpf.WindowsUI.Navigation.Navigation.NavigationParameterProperty">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <returns> [To be supplied] </returns>
+
+
+        </member>
+        <member name="P:DevExpress.Xpf.WindowsUI.Navigation.Navigation.NavigationTarget(System.Windows.DependencyObject)">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <value> [To be supplied] </value>
+
+
+        </member>
+        <member name="F:DevExpress.Xpf.WindowsUI.Navigation.Navigation.NavigationTargetProperty">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <returns> [To be supplied] </returns>
+
+
+        </member>
+        <member name="M:DevExpress.Xpf.WindowsUI.Navigation.Navigation.SetNavigateTo(System.Windows.DependencyObject,System.Object)">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <param name="target">
+		 [To be supplied] 
+            </param>
+            <param name="value">
+		 [To be supplied] 
+            </param>
+
+
+        </member>
+        <member name="M:DevExpress.Xpf.WindowsUI.Navigation.Navigation.SetNavigationHandler(System.Windows.DependencyObject,DevExpress.Xpf.WindowsUI.Navigation.INavigationHandler)">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <param name="target">
+		 [To be supplied] 
+            </param>
+            <param name="value">
+		 [To be supplied] 
+            </param>
+
+
+        </member>
+        <member name="M:DevExpress.Xpf.WindowsUI.Navigation.Navigation.SetNavigationParameter(System.Windows.DependencyObject,System.Object)">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <param name="target">
+		 [To be supplied] 
+            </param>
+            <param name="value">
+		 [To be supplied] 
+            </param>
+
+
+        </member>
+        <member name="M:DevExpress.Xpf.WindowsUI.Navigation.Navigation.SetNavigationTarget(System.Windows.DependencyObject,System.Object)">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <param name="target">
+		 [To be supplied] 
+            </param>
+            <param name="value">
+		 [To be supplied] 
+            </param>
+
+
+        </member>
+        <member name="T:DevExpress.Xpf.WindowsUI.Navigation.NavigationEventArgs">
+
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.Xpf.WindowsUI.Navigation.NavigationEventArgs.#ctor(System.Object,System.Object,System.Object)">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <param name="source">
+		 [To be supplied] 
+            </param>
+            <param name="content">
+		 [To be supplied] 
+            </param>
+            <param name="parameter">
+		 [To be supplied] 
+            </param>
+
+
+        </member>
+        <member name="P:DevExpress.Xpf.WindowsUI.Navigation.NavigationEventArgs.Content">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <value> [To be supplied] </value>
+
+
+        </member>
+        <member name="T:DevExpress.Xpf.WindowsUI.SlideViewItemClickEventArgs">
+
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.Xpf.WindowsUI.SlideViewItemClickEventArgs.#ctor(System.Object)">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <param name="item">
+		 [To be supplied] 
+            </param>
+
+
+        </member>
+        <member name="P:DevExpress.Xpf.WindowsUI.SlideViewItemClickEventArgs.Item">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <value> [To be supplied] </value>
+
+
+        </member>
+        <member name="T:DevExpress.Xpf.WindowsUI.SlideView">
+
+            <summary>
+                <para>A SlideView container within a WindowsUI application.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.Xpf.WindowsUI.SlideView.#ctor">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+
+        </member>
+        <member name="P:DevExpress.Xpf.WindowsUI.SlideView.BackCommand">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <value> [To be supplied] </value>
+
+
+        </member>
+        <member name="F:DevExpress.Xpf.WindowsUI.SlideView.BackCommandProperty">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <returns> [To be supplied] </returns>
+
+
+        </member>
+        <member name="P:DevExpress.Xpf.WindowsUI.SlideView.Header">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <value> [To be supplied] </value>
+
+
+        </member>
+        <member name="F:DevExpress.Xpf.WindowsUI.SlideView.HeaderProperty">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <returns> [To be supplied] </returns>
+
+
+        </member>
+        <member name="P:DevExpress.Xpf.WindowsUI.SlideView.HeaderTemplate">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <value> [To be supplied] </value>
+
+
+        </member>
+        <member name="F:DevExpress.Xpf.WindowsUI.SlideView.HeaderTemplateProperty">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <returns> [To be supplied] </returns>
+
+
+        </member>
+        <member name="E:DevExpress.Xpf.WindowsUI.SlideView.ItemClick">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+
+        </member>
+        <member name="P:DevExpress.Xpf.WindowsUI.SlideView.ItemHeaderTemplate">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <value> [To be supplied] </value>
+
+
+        </member>
+        <member name="F:DevExpress.Xpf.WindowsUI.SlideView.ItemHeaderTemplateProperty">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <returns> [To be supplied] </returns>
+
+
+        </member>
+        <member name="P:DevExpress.Xpf.WindowsUI.SlideView.ItemHeaderTemplateSelector">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <value> [To be supplied] </value>
+
+
+        </member>
+        <member name="F:DevExpress.Xpf.WindowsUI.SlideView.ItemHeaderTemplateSelectorProperty">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <returns> [To be supplied] </returns>
+
+
+        </member>
+        <member name="P:DevExpress.Xpf.WindowsUI.SlideView.ShowBackButton">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <value> [To be supplied] </value>
+
+
+        </member>
+        <member name="F:DevExpress.Xpf.WindowsUI.SlideView.ShowBackButtonProperty">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <returns> [To be supplied] </returns>
+
+
+        </member>
+        <member name="T:DevExpress.Xpf.WindowsUI.Navigation.NavigationServiceBase">
+
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.Xpf.WindowsUI.Navigation.NavigationServiceBase.#ctor">
+            <summary>
+                <para>Initializes a new instance of the NavigationServiceBase class.
+</para>
+            </summary>
+
+
+        </member>
+        <member name="P:DevExpress.Xpf.WindowsUI.Navigation.NavigationServiceBase.CanGoBack">
+            <summary>
+                <para>Returns whether backward navigation can be performed.
+
+</para>
+            </summary>
+            <value><b>true</b>, if backward navigation can be performed; otherwise, <b>false</b>.
+
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.Xpf.WindowsUI.Navigation.NavigationServiceBase.CanGoForward">
+            <summary>
+                <para>Returns whether forward navigation can be performed.
+
+</para>
+            </summary>
+            <value><b>true</b>, if forward navigation can be performed; otherwise, <b>false</b>.
+
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.Xpf.WindowsUI.Navigation.NavigationServiceBase.Current">
+            <summary>
+                <para>Returns the currently displayed object (View).
+</para>
+            </summary>
+            <value>The currently displayed object (View).
+</value>
+
+
+        </member>
+        <member name="M:DevExpress.Xpf.WindowsUI.Navigation.NavigationServiceBase.GoBack">
+            <summary>
+                <para>Navigates to the previous View if there is one in the navigation history.
+</para>
+            </summary>
+
+
+        </member>
+        <member name="M:DevExpress.Xpf.WindowsUI.Navigation.NavigationServiceBase.GoForward">
+            <summary>
+                <para>Navigates to the next View if there is one in the navigation history.
+</para>
+            </summary>
+
+
+        </member>
+        <member name="M:DevExpress.Xpf.WindowsUI.Navigation.NavigationServiceBase.Navigate(System.String,System.Object,System.Object,System.Boolean)">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <param name="target">
+		 [To be supplied] 
+            </param>
+            <param name="param">
+		 [To be supplied] 
+            </param>
+            <param name="parentViewModel">
+		 [To be supplied] 
+            </param>
+            <param name="saveToJournal">
+		 [To be supplied] 
+            </param>
+
+
+        </member>
+        <member name="M:DevExpress.Xpf.WindowsUI.Navigation.NavigationServiceBase.Navigate(System.String,System.Object,System.Object)">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <param name="target">
+		 [To be supplied] 
+            </param>
+            <param name="param">
+		 [To be supplied] 
+            </param>
+            <param name="parentViewModel">
+		 [To be supplied] 
+            </param>
+
+
+        </member>
+        <member name="T:DevExpress.Xpf.WindowsUI.NavigationFrame">
+
+            <summary>
+                <para>A container within a WindowsUI application which provides the capability to navigate through application screens.
+
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.Xpf.WindowsUI.NavigationFrame.#ctor">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.Xpf.WindowsUI.NavigationFrame.AnimationDirectionProperty">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <returns> [To be supplied] </returns>
+
+
+        </member>
+        <member name="P:DevExpress.Xpf.WindowsUI.NavigationFrame.AnimationType">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <value> [To be supplied] </value>
+
+
+        </member>
+        <member name="F:DevExpress.Xpf.WindowsUI.NavigationFrame.AnimationTypeProperty">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <returns> [To be supplied] </returns>
+
+
+        </member>
+        <member name="P:DevExpress.Xpf.WindowsUI.NavigationFrame.BackNavigationMode">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <value> [To be supplied] </value>
+
+
+        </member>
+        <member name="F:DevExpress.Xpf.WindowsUI.NavigationFrame.BackNavigationModeProperty">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <returns> [To be supplied] </returns>
+
+
+        </member>
+        <member name="P:DevExpress.Xpf.WindowsUI.NavigationFrame.CanGoBack">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <value> [To be supplied] </value>
+
+
+        </member>
+        <member name="F:DevExpress.Xpf.WindowsUI.NavigationFrame.CanGoBackProperty">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <returns> [To be supplied] </returns>
+
+
+        </member>
+        <member name="P:DevExpress.Xpf.WindowsUI.NavigationFrame.CanGoForward">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <value> [To be supplied] </value>
+
+
+        </member>
+        <member name="F:DevExpress.Xpf.WindowsUI.NavigationFrame.CanGoForwardProperty">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <returns> [To be supplied] </returns>
+
+
+        </member>
+        <member name="P:DevExpress.Xpf.WindowsUI.NavigationFrame.ContentProvider">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <value> [To be supplied] </value>
+
+
+        </member>
+        <member name="F:DevExpress.Xpf.WindowsUI.NavigationFrame.ContentProviderProperty">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <returns> [To be supplied] </returns>
+
+
+        </member>
+        <member name="E:DevExpress.Xpf.WindowsUI.NavigationFrame.ContentRendered">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+
+        </member>
+        <member name="M:DevExpress.Xpf.WindowsUI.NavigationFrame.GoBack">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+
+        </member>
+        <member name="M:DevExpress.Xpf.WindowsUI.NavigationFrame.GoForward">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+
+        </member>
+        <member name="P:DevExpress.Xpf.WindowsUI.NavigationFrame.Journal">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <value> [To be supplied] </value>
+
+
+        </member>
+        <member name="F:DevExpress.Xpf.WindowsUI.NavigationFrame.JournalProperty">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <returns> [To be supplied] </returns>
+
+
+        </member>
+        <member name="M:DevExpress.Xpf.WindowsUI.NavigationFrame.Navigate(System.Object)">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <param name="source">
+		 [To be supplied] 
+            </param>
+
+
+        </member>
+        <member name="M:DevExpress.Xpf.WindowsUI.NavigationFrame.Navigate(System.Object,System.Object)">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <param name="source">
+		 [To be supplied] 
+            </param>
+            <param name="param">
+		 [To be supplied] 
+            </param>
+
+
+        </member>
+        <member name="E:DevExpress.Xpf.WindowsUI.NavigationFrame.Navigated">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+
+        </member>
+        <member name="E:DevExpress.Xpf.WindowsUI.NavigationFrame.Navigating">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+
+        </member>
+        <member name="P:DevExpress.Xpf.WindowsUI.NavigationFrame.NavigationCacheMode">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <value> [To be supplied] </value>
+
+
+        </member>
+        <member name="E:DevExpress.Xpf.WindowsUI.NavigationFrame.NavigationFailed">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+
+        </member>
+        <member name="P:DevExpress.Xpf.WindowsUI.NavigationFrame.NavigationInProgress">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <value> [To be supplied] </value>
+
+
+        </member>
+        <member name="M:DevExpress.Xpf.WindowsUI.NavigationFrame.OnApplyTemplate">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+
+        </member>
+        <member name="P:DevExpress.Xpf.WindowsUI.NavigationFrame.Source">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <value> [To be supplied] </value>
+
+
+        </member>
+        <member name="F:DevExpress.Xpf.WindowsUI.NavigationFrame.SourceProperty">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <returns> [To be supplied] </returns>
+
+
+        </member>
+        <member name="T:DevExpress.Xpf.WindowsUI.FlipViewItem">
+
+            <summary>
+                <para>An object that stores a <see cref="T:DevExpress.Xpf.WindowsUI.FlipView"/>'s content.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.Xpf.WindowsUI.FlipViewItem.#ctor">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+
+        </member>
+        <member name="T:DevExpress.Xpf.WindowsUI.FlipView">
+
+            <summary>
+                <para>A FlipView.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.Xpf.WindowsUI.FlipView.#ctor">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+
+        </member>
+        <member name="P:DevExpress.Xpf.WindowsUI.FlipView.IsAnimationEnabled">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <value> [To be supplied] </value>
+
+
+        </member>
+        <member name="F:DevExpress.Xpf.WindowsUI.FlipView.IsAnimationEnabledProperty">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <returns> [To be supplied] </returns>
+
+
+        </member>
+        <member name="P:DevExpress.Xpf.WindowsUI.FlipView.IsManipulationInertiaEnabled">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <value> [To be supplied] </value>
+
+
+        </member>
+        <member name="F:DevExpress.Xpf.WindowsUI.FlipView.IsManipulationInertiaEnabledProperty">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <returns> [To be supplied] </returns>
+
+
+        </member>
+        <member name="T:DevExpress.Xpf.WindowsUI.NavigationButton">
+
+            <summary>
+                <para>A button within WindowsUI application capable of navigating to a specific application screen.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.Xpf.WindowsUI.NavigationButton.#ctor">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+
+        </member>
+        <member name="P:DevExpress.Xpf.WindowsUI.NavigationButton.NavigateTo">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <value> [To be supplied] </value>
+
+
+        </member>
+        <member name="F:DevExpress.Xpf.WindowsUI.NavigationButton.NavigateToProperty">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <returns> [To be supplied] </returns>
+
+
+        </member>
+        <member name="P:DevExpress.Xpf.WindowsUI.NavigationButton.NavigationParameter">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <value> [To be supplied] </value>
+
+
+        </member>
+        <member name="F:DevExpress.Xpf.WindowsUI.NavigationButton.NavigationParameterProperty">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <returns> [To be supplied] </returns>
+
+
+        </member>
+        <member name="P:DevExpress.Xpf.WindowsUI.NavigationButton.NavigationTarget">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <value> [To be supplied] </value>
+
+
+        </member>
+        <member name="F:DevExpress.Xpf.WindowsUI.NavigationButton.NavigationTargetProperty">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <returns> [To be supplied] </returns>
+
+
+        </member>
+        <member name="M:DevExpress.Xpf.WindowsUI.NavigationButton.OnNavigateToChanged(System.Object,System.Object)">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <param name="oldValue">
+		 [To be supplied] 
+            </param>
+            <param name="newValue">
+		 [To be supplied] 
+            </param>
+
+
+        </member>
+        <member name="M:DevExpress.Xpf.WindowsUI.NavigationButton.OnNavigationParameterChanged(System.Object,System.Object)">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <param name="oldValue">
+		 [To be supplied] 
+            </param>
+            <param name="newValue">
+		 [To be supplied] 
+            </param>
+
+
+        </member>
+        <member name="M:DevExpress.Xpf.WindowsUI.NavigationButton.OnNavigationTargetChanged(System.Object,System.Object)">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <param name="oldValue">
+		 [To be supplied] 
+            </param>
+            <param name="newValue">
+		 [To be supplied] 
+            </param>
+
+
+        </member>
+        <member name="T:DevExpress.Xpf.WindowsUI.PageAdornerControl">
+
+            <summary>
+                <para>A control that, when navigated to, displays a header and reveals a back button.
+
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.Xpf.WindowsUI.PageAdornerControl.#ctor">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+
+        </member>
+        <member name="P:DevExpress.Xpf.WindowsUI.PageAdornerControl.BackCommand">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <value> [To be supplied] </value>
+
+
+        </member>
+        <member name="F:DevExpress.Xpf.WindowsUI.PageAdornerControl.BackCommandProperty">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <returns> [To be supplied] </returns>
+
+
+        </member>
+        <member name="P:DevExpress.Xpf.WindowsUI.PageAdornerControl.ShowBackButton">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <value> [To be supplied] </value>
+
+
+        </member>
+        <member name="F:DevExpress.Xpf.WindowsUI.PageAdornerControl.ShowBackButtonProperty">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <returns> [To be supplied] </returns>
+
+
+        </member>
+    </members>
+</doc>

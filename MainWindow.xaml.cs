@@ -266,7 +266,8 @@ namespace MsgTransfer
 
         private void pubtask_Click(object sender, RoutedEventArgs e)
         {
-
+            NewTask nt = new NewTask("wm", "20151007", msggeturl);
+            nt.Show();
         }
     }
 }
