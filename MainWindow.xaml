@@ -53,7 +53,7 @@
                         <RowDefinition Height="33*"/>
                     </Grid.RowDefinitions>
                     <Grid Grid.Column="0" Grid.Row="0" x:Name="workinglistgrid">
-                        <ListView x:Name="workinglist" SelectionChanged="workinglist_SelectionChanged"/>
+                        <ListView x:Name="workinglist" SelectionChanged="workinglist_SelectionChanged" />
                     </Grid>
                     <Grid Grid.Column="1" Grid.Row="0" x:Name="workingtaskinfo" Background="AliceBlue">
                         <Grid.RowDefinitions>
@@ -75,7 +75,7 @@
                     </Grid>
                     <Button x:Name="finishtask" Content="完成任务" Grid.Column="1" HorizontalAlignment="Left" Margin="211,21,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" Click="finishtask_Click"/>
                     <Button x:Name="getdata" Content="获取数据" HorizontalAlignment="Left" Margin="23,21,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" Grid.Column="1" Click="getdata_Click"/>
-                    <Button x:Name="luanchtask" Content="执行任务" HorizontalAlignment="Left" Margin="117,21,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" Grid.Column="1" Click="luanchtask_Click" />
+                    <Button x:Name="luanchtask" Content="执行任务" HorizontalAlignment="Left" Margin="117,21,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" Grid.Column="1" Click="luanchtask_Click" IsEnabled="False" />
                 </Grid>
             </TabItem>
             <TabItem Header="已完成">

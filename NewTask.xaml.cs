@@ -47,7 +47,7 @@ namespace MsgTransfer
             msg.taskname = taskname_txt.Text;
             msg.taskid = Guid.NewGuid().ToString();
             msg.usrname = usrname_txt.Text;
-            msg.usrid = "20151007";
+            msg.usrid = "20150722";
             msg.taskinfo = taskinfo_txt.Text;
             msg.creatername = creatname;
             msg.createid = creatid;

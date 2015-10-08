@@ -1,0 +1,26 @@
+﻿<Window x:Class="MsgTransfer.Appconfig"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MsgTransfer"
+        mc:Ignorable="d" Height="300" Width="400" WindowStartupLocation="CenterScreen" Title="工具选择" WindowStyle="ToolWindow" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="32*"/>
+            <RowDefinition Height="34*"/>
+            <RowDefinition Height="207*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Grid.Column="0">
+            <Label Name="currenttask" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"></Label>
+        </Grid>
+        <Grid Grid.Row="1" Grid.Column="0">
+            <Label HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Content="可用工具："></Label>
+        </Grid>
+        <Grid Grid.Row="2" Grid.Column="0">
+            <ListView Name="toolist">
+                
+            </ListView>
+        </Grid>
+    </Grid>
+</Window>

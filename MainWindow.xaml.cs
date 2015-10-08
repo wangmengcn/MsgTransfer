@@ -28,6 +28,12 @@ namespace MsgTransfer
             InitializeComponent();
         }
 
+        public MainWindow(string usrname,string usrid)
+        {
+            InitializeComponent();
+            loginusr = usrname;
+            loginid = usrid;
+        }
         //变量声明
         //HttpModuel http = new HttpModuel();
         Httpmsg http = new Httpmsg();
@@ -35,6 +41,10 @@ namespace MsgTransfer
         string msggeturl = "http://192.168.88.128:2000";
         string msgstaturl = "http://192.168.88.128:2001";
         string msgstatchangeurl = "http://192.168.88.128:2002";
+
+        //登录用户
+        string loginusr = string.Empty;
+        string loginid = string.Empty;
 
         List<Messageobj> orderstat = new List<Messageobj>();
         List<Messageobj> workingstat = new List<Messageobj>();
@@ -101,16 +111,16 @@ namespace MsgTransfer
         private void platform_Loaded(object sender, RoutedEventArgs e)
         {
             
-            orderlinfo.list = "20151007orderlist";
+            orderlinfo.list =loginid+ "orderlist";
 
             
-            workinginfo.list = "20151007workinglist";
+            workinginfo.list = loginid + "workinglist";
 
             
-            doneinfo.list = "20151007donelist";
+            doneinfo.list = loginid + "donelist";
 
             
-            myinfo.list = "20151007mytasklist";
+            myinfo.list = loginid + "mytasklist";
 
 
             orderstat = http.taskstat(msgstaturl, orderlinfo);
@@ -184,7 +194,7 @@ namespace MsgTransfer
                 int index = int.Parse(it.ToolTip.ToString());
                 Messageobj msg = orderstat[index];
                 MsgStat mstat = new MsgStat();
-                mstat.usrid = "20151007";
+                mstat.usrid = loginid ;
                 mstat.changeto = "0";
                 mstat.msg = msg;
                 http.chagestat(msgstatchangeurl, mstat);
@@ -202,7 +212,7 @@ namespace MsgTransfer
                 int index = int.Parse(it.ToolTip.ToString());
                 Messageobj msg = workingstat[index];
                 MsgStat mstat = new MsgStat();
-                mstat.usrid = "20151007";
+                mstat.usrid = loginid ;
                 mstat.changeto = "1";
                 mstat.msg = msg;
                 http.chagestat(msgstatchangeurl, mstat);
@@ -231,6 +241,7 @@ namespace MsgTransfer
                         mp.fsdownload(localfile, filename);
                     }
                     MessageBox.Show("任务数据下载完毕");
+                    luanchtask.IsEnabled = true;
                 }
             }
         }
@@ -238,7 +249,15 @@ namespace MsgTransfer
         //点击读取配置文件,执行任务
         private void luanchtask_Click(object sender, RoutedEventArgs e)
         {
-
+            
+            ListViewItem it = workinglist.SelectedItem as ListViewItem;
+            if (it != null)
+            {
+                int index = int.Parse(it.ToolTip.ToString());
+                Messageobj msg = workingstat[index];
+                Appconfig appluanch = new Appconfig(msg.taskname,msg.taskinfo);
+                appluanch.Show();
+            }
         }
 
 
@@ -273,13 +292,13 @@ namespace MsgTransfer
                 switch(msg.taskstat)
                 {
                     case "order":
-                        lwitem.Background = Brushes.AliceBlue;
+                        lwitem.Foreground = Brushes.Red;
                         break;
                     case "working":
-                        lwitem.Background = Brushes.ForestGreen;
+                        lwitem.Foreground = Brushes.Purple;
                         break;
                     case "done":
-                        lwitem.Background = Brushes.Green;
+                        lwitem.Foreground = Brushes.Green;
                         break;
                 }
                 
@@ -361,7 +380,7 @@ namespace MsgTransfer
 
         private void pubtask_Click(object sender, RoutedEventArgs e)
         {
-            NewTask nt = new NewTask("wm", "20151007", msggeturl);
+            NewTask nt = new NewTask("wm", "20150722", msggeturl);
             nt.ShowDialog();
             reloadform();
         }
