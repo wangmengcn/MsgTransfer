@@ -29,7 +29,9 @@ namespace MsgTransfer
         }
 
         //变量声明
-        HttpModuel http = new HttpModuel();
+        //HttpModuel http = new HttpModuel();
+        Httpmsg http = new Httpmsg();
+        MongoOperation mp = new MongoOperation();
         string msggeturl = "http://192.168.88.128:2000";
         string msgstaturl = "http://192.168.88.128:2001";
         string msgstatchangeurl = "http://192.168.88.128:2002";
@@ -39,6 +41,11 @@ namespace MsgTransfer
         List<Messageobj> donestat = new List<Messageobj>();
         List<Messageobj> mystat = new List<Messageobj>();
 
+
+        ListInfo orderlinfo = new ListInfo();
+        ListInfo workinginfo = new ListInfo();
+        ListInfo doneinfo = new ListInfo();
+        ListInfo myinfo = new ListInfo();
         //USERLIST用户的任务信息枚举
         enum USERLIST
         {
@@ -90,184 +97,275 @@ namespace MsgTransfer
     #endregion
 
 
-
-
-
-
-
-        //pubmsg发送一条任务消息到服务器,url:为目标服务地址,msg:为任务消息体
-        private bool pubmsg(string url,Messageobj msg)
-        {
-            bool httpres = false;
-            if(url!=null&&msg!=null)
-            {
-                string jsonstr = JsonConvert.SerializeObject(msg);
-                string postresult = http.postjson(url, jsonstr);
-                if (postresult == "数据提交完毕")
-                {
-                    httpres = true;
-                }
-            }
-            return httpres;
-        }
-
-
-        //getmsg获取返回的消息体，url:为服务地址,msg:为检索消息体条件
-
-        private Messageobj getmsg(string url,Messageobj msg)
-        {
-            Messageobj httpmsg = new Messageobj();
-            string jsonstr = JsonConvert.SerializeObject(msg);
-            string postresult = http.postjson(url, jsonstr);
-            httpmsg = (Messageobj)JsonConvert.DeserializeObject(postresult, typeof(Messageobj));
-            return httpmsg;
-        }
-
-        //taskstat获取当前用户的任务信息，url:服务地址，msg要获取的list名
-        private List<Messageobj> taskstat(string url, ListInfo msg)
-        {
-            List<Messageobj> msglist = new List<Messageobj>();
-            if (url != null && msg != null)
-            {
-                string jsonstr = JsonConvert.SerializeObject(msg);
-                string postresult = http.postjson(url, jsonstr);
-                if (postresult != "[emptylist")
-                {
-                    JArray taskinfos = (JArray)JsonConvert.DeserializeObject(postresult);
-                    for(int i=0;i<taskinfos.Count;i++)
-                    {
-                        string taskstr = taskinfos[i].ToString();
-                        Messageobj obj= (Messageobj)JsonConvert.DeserializeObject(taskstr, typeof(Messageobj));
-                        msglist.Add(obj);
-                    }
-                }
-            }
-            return msglist;
-        }
-
-        private bool chagestat(string url, MsgStat msg)
-        {
-            bool httpres = false;
-            if (url != null && msg != null)
-            {
-                string jsonstr = JsonConvert.SerializeObject(msg);
-                string postresult = http.postjson(url, jsonstr);
-                if (postresult == "数据提交完毕")
-                {
-                    httpres = true;
-                }
-            }
-            return httpres;
-        }
-
-        private void platform_LayoutUpdated(object sender, EventArgs e)
-        {
-
-        }
-
+        //窗体响应事件         
         private void platform_Loaded(object sender, RoutedEventArgs e)
         {
-            ListInfo orderlinfo = new ListInfo();
-            orderlinfo.list = "20151005orderlist";
-
-            ListInfo workinginfo = new ListInfo();
-            workinginfo.list = "20151005workinglist";
-
-            ListInfo doneinfo = new ListInfo();
-            doneinfo.list = "20151005donelist";
-
-            ListInfo myinfo = new ListInfo();
-            myinfo.list = "20151005mytasklist";
-
-
-            orderstat = taskstat(msgstaturl, orderlinfo);
             
-            workingstat = taskstat(msgstaturl, workinginfo);
+            orderlinfo.list = "20151007orderlist";
 
-            donestat = taskstat(msgstaturl, doneinfo);
+            
+            workinginfo.list = "20151007workinglist";
 
-            mystat = taskstat(msgstaturl, myinfo);
+            
+            doneinfo.list = "20151007donelist";
+
+            
+            myinfo.list = "20151007mytasklist";
+
+
+            orderstat = http.taskstat(msgstaturl, orderlinfo);
+            
+            workingstat = http.taskstat(msgstaturl, workinginfo);
+
+            donestat = http.taskstat(msgstaturl, doneinfo);
+
+            mystat = http.taskstat(msgstaturl, myinfo);
 
             initwindow(order, "order", orderstat);
             initwindow(workinglist, "working", workingstat);
-            initwindow(donelist, "order", donestat);
-            initwindow(mylist, "order", mystat);
+            initwindow(donelist, "done", donestat);
+            initwindow(mylist, "mytask", mystat);
+        }
+
+        private void workinglist_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ListViewItem it = workinglist.SelectedItem as ListViewItem;
+            if(it!=null)
+            {
+                int index = int.Parse(it.ToolTip.ToString());
+                Messageobj msg = workingstat[index];
+                infodisplay("working", msg);
+            }
+            
+        }
+
+        private void order_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ListViewItem it = order.SelectedItem as ListViewItem;
+            if(it!=null)
+            {
+                int index = int.Parse(it.ToolTip.ToString());
+                Messageobj msg = orderstat[index];
+                infodisplay("order", msg);
+            }
+            
+        }
+
+        private void donelist_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ListViewItem it = donelist.SelectedItem as ListViewItem;
+            if(it!=null)
+            {
+                int index = int.Parse(it.ToolTip.ToString());
+                Messageobj msg = donestat[index];
+                infodisplay("done", msg);
+            }
+            
+        }
+
+        private void mylist_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ListViewItem it = mylist.SelectedItem as ListViewItem;
+            if(it!=null)
+            {
+                int index = int.Parse(it.ToolTip.ToString());
+                Messageobj msg = mystat[index];
+                infodisplay("mytask", msg);
+            }
+            
+        }
+
+        //开始任务
+        private void starttask_Click(object sender, RoutedEventArgs e)
+        {
+            ListViewItem it = order.SelectedItem as ListViewItem;
+            if (it != null)
+            {
+                int index = int.Parse(it.ToolTip.ToString());
+                Messageobj msg = orderstat[index];
+                MsgStat mstat = new MsgStat();
+                mstat.usrid = "20151007";
+                mstat.changeto = "0";
+                mstat.msg = msg;
+                http.chagestat(msgstatchangeurl, mstat);
+                MessageBox.Show("任务状态已改变");
+                reloadform();
+            }
+        }
+
+        //任务完成
+        private void finishtask_Click(object sender, RoutedEventArgs e)
+        {
+            ListViewItem it = workinglist.SelectedItem as ListViewItem;
+            if (it != null)
+            {
+                int index = int.Parse(it.ToolTip.ToString());
+                Messageobj msg = workingstat[index];
+                MsgStat mstat = new MsgStat();
+                mstat.usrid = "20151007";
+                mstat.changeto = "1";
+                mstat.msg = msg;
+                http.chagestat(msgstatchangeurl, mstat);
+                MessageBox.Show("任务状态已改变");
+                reloadform();
+            }
+        }
+
+        //获取任务数据
+        private void getdata_Click(object sender, RoutedEventArgs e)
+        {
+            ListViewItem it = workinglist.SelectedItem as ListViewItem;
+            if (it != null)
+            {
+                int index = int.Parse(it.ToolTip.ToString());
+                Messageobj msg = workingstat[index];
+                MessageBox.Show("选择数据存放文件夹");
+                System.Windows.Forms.FolderBrowserDialog floderdialog = new System.Windows.Forms.FolderBrowserDialog();
+                floderdialog.Description = "选择文件夹";
+                if(floderdialog.ShowDialog()== System.Windows.Forms.DialogResult.OK)
+                {
+                    string selectedfloder = floderdialog.SelectedPath;
+                    foreach(string filename in msg.tf.filename)
+                    {
+                        string localfile = selectedfloder + @"\" + filename;
+                        mp.fsdownload(localfile, filename);
+                    }
+                    MessageBox.Show("任务数据下载完毕");
+                }
+            }
+        }
+
+        //点击读取配置文件,执行任务
+        private void luanchtask_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+
+        //私有函数
+        private void reloadform()
+        {
+            orderstat = http.taskstat(msgstaturl, orderlinfo);
+
+            workingstat = http.taskstat(msgstaturl, workinginfo);
+
+            donestat = http.taskstat(msgstaturl, doneinfo);
+
+            mystat = http.taskstat(msgstaturl, myinfo);
+
+            initwindow(order, "order", orderstat);
+            initwindow(workinglist, "working", workingstat);
+            initwindow(donelist, "done", donestat);
+            initwindow(mylist, "mytask", mystat);
         }
 
         private void initwindow(ListView lw, string listtype,List<Messageobj> msgs)
         {
             int counter = 0;
-            foreach(Messageobj msg in msgs)
+            lw.Items.Clear();
+           
+            foreach (Messageobj msg in msgs)
             {
                 
                 ListViewItem lwitem = new ListViewItem();
                 lwitem.Content = msg.taskname;
                 lwitem.ToolTip = counter.ToString();
+                switch(msg.taskstat)
+                {
+                    case "order":
+                        lwitem.Background = Brushes.AliceBlue;
+                        break;
+                    case "working":
+                        lwitem.Background = Brushes.ForestGreen;
+                        break;
+                    case "done":
+                        lwitem.Background = Brushes.Green;
+                        break;
+                }
+                
+               // lwitem.MouseDown += selectitemchange;
+
                 lw.Items.Add(lwitem);
                 
                 if(counter==0)
                 {
-                    switch (listtype)
-                    {
-                        case "order":
-                            order1.Text = msg.taskname;
-                            //order2.Text = msg.taskid;
-                            order3.Text = msg.usrname;
-                            order4.Text = msg.creatername;
-                            order5.Text = msg.taskstat;
-                            foreach(string filename in msg.tf.filename)
-                            {
-                                order6.Items.Add(filename);
-                            }
-                            order7.Content = msg.taskinfo;
-                            break;
-                        case "working":
-                            working1.Text = msg.taskname;
-                            //working2.Text = msg.taskid;
-                            working3.Text = msg.usrname;
-                            working4.Text = msg.creatername;
-                            working5.Text = msg.taskstat;
-                            foreach (string filename in msg.tf.filename)
-                            {
-                                working6.Items.Add(filename);
-                            }
-                            working7.Content = msg.taskinfo;
-                            break;
-                        case "done":
-                            done1.Text = msg.taskname;
-                            //done2.Text = msg.taskid;
-                            done3.Text = msg.usrname;
-                            done4.Text = msg.creatername;
-                            done5.Text = msg.taskstat;
-                            foreach (string filename in msg.tf.filename)
-                            {
-                                done6.Items.Add(filename);
-                            }
-                            done7.Content = msg.taskinfo;
-                            break;
-                        case "mytask":
-                            my1.Text = msg.taskname;
-                            //my2.Text = msg.taskid;
-                            my3.Text = msg.usrname;
-                            my4.Text = msg.creatername;
-                            my5.Text = msg.taskstat;
-                            foreach (string filename in msg.tf.filename)
-                            {
-                                my6.Items.Add(filename);
-                            }
-                            my7.Content = msg.taskinfo;
-                            break;
-                    }
+                    infodisplay(listtype, msg);
                 }
                 counter++;
 
             }
         }
 
+        
+
+        private void infodisplay(string type,Messageobj msg)
+        {
+            switch (type)
+            {
+                case "order":
+                    order1.Text = msg.taskname;
+                    //order2.Text = msg.taskid;
+                    order3.Text = msg.usrname;
+                    order4.Text = msg.creatername;
+                    order5.Text = msg.taskstat;
+                    order6.Items.Clear();
+                    foreach (string filename in msg.tf.filename)
+                    {
+                        order6.Items.Add(filename);
+                    }
+                    order7.Content = msg.taskinfo;
+                    break;
+                case "working":
+                    working1.Text = msg.taskname;
+                    //working2.Text = msg.taskid;
+                    working3.Text = msg.usrname;
+                    working4.Text = msg.creatername;
+                    working5.Text = msg.taskstat;
+                    working6.Items.Clear();
+                    foreach (string filename in msg.tf.filename)
+                    {
+                        working6.Items.Add(filename);
+                    }
+                    working7.Content = msg.taskinfo;
+                    break;
+                case "done":
+                    done1.Text = msg.taskname;
+                    //done2.Text = msg.taskid;
+                    done3.Text = msg.usrname;
+                    done4.Text = msg.creatername;
+                    done5.Text = msg.taskstat;
+                    done6.Items.Clear();
+                    foreach (string filename in msg.tf.filename)
+                    {
+                        done6.Items.Add(filename);
+                    }
+                    done7.Content = msg.taskinfo;
+                    break;
+                case "mytask":
+                    my1.Text = msg.taskname;
+                    //my2.Text = msg.taskid;
+                    my3.Text = msg.usrname;
+                    my4.Text = msg.creatername;
+                    my5.Text = msg.taskstat;
+                    my6.Items.Clear();
+                    foreach (string filename in msg.tf.filename)
+                    {
+                        my6.Items.Add(filename);
+                    }
+                    my7.Content = msg.taskinfo;
+                    break;
+            }
+        }
+
+       
+
         private void pubtask_Click(object sender, RoutedEventArgs e)
         {
             NewTask nt = new NewTask("wm", "20151007", msggeturl);
-            nt.Show();
+            nt.ShowDialog();
+            reloadform();
         }
+
+        
     }
 }

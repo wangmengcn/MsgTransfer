@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MsgTransfer"
         xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid" xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol" x:Name="platform" x:Class="MsgTransfer.MainWindow"
-        mc:Ignorable="d" Height="491" Width="532" BorderThickness="1" WindowStyle="ToolWindow" Title="虚拟研判平台" LayoutUpdated="platform_LayoutUpdated" Loaded="platform_Loaded">
+        mc:Ignorable="d" Height="491" Width="532" BorderThickness="1" WindowStyle="ToolWindow" Title="虚拟研判平台" WindowStartupLocation="CenterScreen" Loaded="platform_Loaded">
     <Grid>
         <TabControl x:Name="tabControl" >
             <TabItem Header="未进行">
@@ -19,7 +19,7 @@
                         <RowDefinition Height="33*"/>
                     </Grid.RowDefinitions>
                     <Grid Grid.Column="0" Grid.Row="0" x:Name="oderlistgrid">
-                        <ListView x:Name="order"/>
+                        <ListView x:Name="order" SelectionChanged="order_SelectionChanged"/>
                     </Grid>
                     <Grid Grid.Column="1" Grid.Row="0" x:Name="taskinfo" Background="AliceBlue" >
                         <Grid.RowDefinitions>
@@ -39,6 +39,7 @@
                         <ComboBox x:Name="order6" HorizontalAlignment="Left" Margin="148,141,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120"/>
                         <dxlc:GroupBox Header="任务描述" Name="order7" HorizontalAlignment="Left" Margin="58,177,0,0" Grid.Row="1" VerticalAlignment="Top" Width="209" Height="134" Background="{x:Null}" SeparatorBrush="{x:Null}" BorderBrush="Black"/>
                     </Grid>
+                    <Button x:Name="starttask" Content="开始任务" Grid.Column="1" HorizontalAlignment="Left" Margin="190,21,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" Click="starttask_Click"/>
                 </Grid>
             </TabItem>
             <TabItem Header="正在进行">
@@ -52,7 +53,7 @@
                         <RowDefinition Height="33*"/>
                     </Grid.RowDefinitions>
                     <Grid Grid.Column="0" Grid.Row="0" x:Name="workinglistgrid">
-                        <ListView x:Name="workinglist"/>
+                        <ListView x:Name="workinglist" SelectionChanged="workinglist_SelectionChanged"/>
                     </Grid>
                     <Grid Grid.Column="1" Grid.Row="0" x:Name="workingtaskinfo" Background="AliceBlue">
                         <Grid.RowDefinitions>
@@ -72,6 +73,9 @@
                         <ComboBox x:Name="working6" HorizontalAlignment="Left" Margin="148,141,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120"/>
                         <dxlc:GroupBox Header="任务描述" Name="working7" HorizontalAlignment="Left" Margin="58,177,0,0" Grid.Row="1" VerticalAlignment="Top" Width="209" Height="135" Background="{x:Null}" SeparatorBrush="{x:Null}" BorderBrush="Black"/>
                     </Grid>
+                    <Button x:Name="finishtask" Content="完成任务" Grid.Column="1" HorizontalAlignment="Left" Margin="211,21,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" Click="finishtask_Click"/>
+                    <Button x:Name="getdata" Content="获取数据" HorizontalAlignment="Left" Margin="23,21,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" Grid.Column="1" Click="getdata_Click"/>
+                    <Button x:Name="luanchtask" Content="执行任务" HorizontalAlignment="Left" Margin="117,21,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" Grid.Column="1" Click="luanchtask_Click" />
                 </Grid>
             </TabItem>
             <TabItem Header="已完成">
@@ -85,7 +89,7 @@
                         <RowDefinition Height="33*"/>
                     </Grid.RowDefinitions>
                     <Grid Grid.Column="0" Grid.Row="0" x:Name="donelistgrid">
-                        <ListView x:Name="donelist"/>
+                        <ListView x:Name="donelist" SelectionChanged="donelist_SelectionChanged"/>
                     </Grid>
 
                     <Grid Grid.Column="1" Grid.Row="0" x:Name="donetaskinfo" Background="AliceBlue">
@@ -120,7 +124,7 @@
                         <RowDefinition Height="33*"/>
                     </Grid.RowDefinitions>
                     <Grid Grid.Column="0" Grid.Row="0" x:Name="mylistgrid">
-                        <ListView x:Name="mylist"/>
+                        <ListView x:Name="mylist" SelectionChanged="mylist_SelectionChanged"/>
                     </Grid>
 
                     <Grid Grid.Column="1" Grid.Row="0" x:Name="mytaskinfo" Background="AliceBlue">
@@ -141,7 +145,7 @@
                         <ComboBox x:Name="my6" HorizontalAlignment="Left" Margin="148,143,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120"/>
                         <dxlc:GroupBox Header="任务描述" Name="my7" HorizontalAlignment="Left" Margin="58,179,0,0" Grid.Row="1" VerticalAlignment="Top" Width="209" Height="138" Background="{x:Null}" SeparatorBrush="{x:Null}" BorderBrush="Black"/>
                     </Grid>
-                    <Button x:Name="pubtask" Content="发布任务" HorizontalAlignment="Left" Margin="152,21,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" Grid.Column="1" Click="pubtask_Click"/>
+                    <Button x:Name="pubtask" Content="发布任务" HorizontalAlignment="Left" Margin="214,21,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" Grid.Column="1" Click="pubtask_Click"/>
                 </Grid>
             </TabItem>
         </TabControl>
